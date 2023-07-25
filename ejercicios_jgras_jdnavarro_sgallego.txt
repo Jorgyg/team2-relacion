@@ -1,0 +1,117 @@
+1.
+
+Atleta(NºDorsal: number, Nombre: String...)
+
+Da_relevo_a(id_atleta: number fk)
+
+2.
+
+Elemento(nombre_elem: String, peso_atómico: number, simbolo: String,
+ nºatómico: String, nombre_comp: String fk)
+
+Proporción(nombre_elem: String fk, nombre_comp: String fk)
+
+Compuesto(nombre_comp: String)
+
+Gaseoso(coef_expan: number, temp_lic: number, nombre_comp: String fk) 
+
+Liquido(densidad: number, temp_evap: number, nombre_comp: String fk) 
+
+Sólido(color: String, olor: String, dureza: number, nombre_comp: String fk) 
+
+3.
+
+Sucursal(numero: number, ciudad: string, activo: boolean)
+
+Cliente(dni: string, nombre: string, apellidos: string, direccion: string, ciudad: string)
+
+Cuenta(numero:number, saldo: number)
+
+Abrir(numero_sucursal: number fk, dni_cliente: string fk, numero_cuenta: number fk)
+
+Transaccion(numero: number, fecha: date, tipo_operacion: string, cantidad: number, numero_cuenta: number fk)
+
+4.
+
+Coche( num_coche: number, marca: String, modelo: String, num_matrícula: number,
+fecha_compra: date, fecha_ult_rev: date, cod_parque_ number fk)
+
+Parque_bomberos( cod_parque: number, nombre: String, dirección: String,
+telefono: number, categoria: String
+
+Recibe(cod_parque. number fk, cod_pet_serv: number fk, fecha: date, hora: time)
+
+Petición_de_servicio(cod_pet_serv: number, tiempo_serv: time, grado_urgencia: number)
+
+Equipo(cod_eq: number, nombre:String)
+
+Bombero( cod_bom: numeber, nombre:String, apellidos: String, fecha_nac: date,
+dni: String, dirección: String, telefono: number)
+
+Forma_parte_de(cod_bom: numeber fk, cod_equipo: number fk, puesto: String)
+
+Turno(cod_turno: number, descripcion:String)
+
+Período(fecha_inicio: date, fecha_fin: date)
+
+5.
+
+Fondo(titulo_string, autor: string, cantidad: number)
+
+Libro(firma: string, titulo: string, autor: string, disponible: boolean)
+
+Socios(numero: number, nombre: string, apellidos: string, telefono: number, fecha_cad: date)
+
+Prestamo(numero: number, fecha_prestamo: date, firma: string fk, num_socio: number fk)
+
+Prestamos_S(num_prestamo)
+
+Prestamo_E(num_prestamo, fecha_devol:date)
+
+Sancion(num_dias: number, num_socio: number)
+
+6.
+
+Cliente (cod_cliente:number)
+
+Pedido (cod_pedido:number, fecha_pedido:date, cod_cliente:number fk, cod_producto:number fk, num_unidades:number)
+
+Producto (cod_producto:number, cantidad:number)
+
+Proveedor (cod_proveedor:number, unidades:number, fecha_encargo:date, cod_producto:number fk)
+
+7.
+
+Arrendatario(cif_nif: string, nombre_fiscal: string, nombre_firmante: string, cargo_firmante: string, direccion: string, codigo_postal: number, localidad: string, provincia: string, fax: string, actividad: string, telefono_fijo: number, telefono_movil: number)
+
+Nave(codigo_nave: number, poligono: string, calle: string, numero: number, localidad: string, codigo_postal: number, provincia: string, telefono: number, caracteristicas: number, foto: string, datos_escritura: string, alquilada: string, gastos_comunidad:number)
+
+Alquila(cif_dni_arrendatario: string fk, codigo_nave: number fk, numero_cuenta: number, dias_pago: number, fecha_alquiler: date, fecha_fin_alquiler: date, importe_alquiler: number)
+
+Recibo (num_recibo:number, importe_total:number, importe_iva:number, pagado:boolean, fecha:date, cif_arrendatario:number fk, codigo_nave:number fk)
+
+8.
+
+Piso(puerta: number, dni: String, nombre: String, apellidos: String, dirección: String,
+ codigo_postal: number, localidad: String, provincia: String, teléfono: number)
+
+Cargo(cod_cargo: number, nombre:Stirng, funciones: String)
+
+Ostenta(puerta_piso: number fk, cod_cargo: number fk, fecha_posesión: date)
+
+Ingreso_recibo(codigo_anotacion: number fk, mes: String, pagado: boolean)
+
+Detalle_recibo( num_linea: number, concepto: String, importe: number,
+id_ingreso: number fk)
+
+Anotación (codigo: number, fecha: date, importe: number)
+
+Ingreso_extra(codigo_anotacion: number fk, concepto: String)
+
+Tipo_gasto_fijo(codigo_ number, nombre: string, descripcion: strin)
+
+Gasto_fijo(codigo_anotacion: number fk, fecha_inicio:date, fecha_fin:date, consumo: number, codigo_tipo: number fk)
+
+Gasto_variable(codigo_anotacion: number fk, fecha_factura: date ,concepto: String,
+numero_factura: number)
+
